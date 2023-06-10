@@ -582,7 +582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Coin Sound
+  m_text: Loop Sound Mute Unmute
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -685,7 +685,7 @@ AudioSource:
   m_GameObject: {fileID: 568186030}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5753882277166272808, guid: fc3ff3a0f25e0d642a611026b37dc70c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5ac3b1c0813283f4599286c69e3f7a79, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 843879534}
   - component: {fileID: 843879533}
   m_Layer: 5
-  m_Name: Button
+  m_Name: CoinButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -854,9 +854,9 @@ AudioSource:
   m_GameObject: {fileID: 843879531}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3549218508594739080, guid: fc3ff3a0f25e0d642a611026b37dc70c, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Damage Sound
+  m_text: One Shot Sound Mute Unmute
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1170,13 +1170,14 @@ GameObject:
   - component: {fileID: 1275650192}
   - component: {fileID: 1275650191}
   - component: {fileID: 1275650190}
+  - component: {fileID: 1275650193}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: LoopMuteUnmuteButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1275650189
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1280,6 +1281,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275650188}
   m_CullTransparentMesh: 1
+--- !u!114 &1275650193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275650188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc4f61c6cd0c1f41bcc79cb7ca7b5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isMute: 0
+  _parameterName: LoopVolume
+  _button: {fileID: 1275650190}
+  _audioMixerGroup: {fileID: 5753882277166272808, guid: fc3ff3a0f25e0d642a611026b37dc70c, type: 2}
 --- !u!1 &1337820711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,13 +1309,14 @@ GameObject:
   - component: {fileID: 1337820715}
   - component: {fileID: 1337820714}
   - component: {fileID: 1337820713}
+  - component: {fileID: 1337820716}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: OneShotMuteUnmuteButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1337820712
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1402,6 +1420,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337820711}
   m_CullTransparentMesh: 1
+--- !u!114 &1337820716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337820711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc4f61c6cd0c1f41bcc79cb7ca7b5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isMute: 0
+  _parameterName: OneShotVolume
+  _button: {fileID: 1337820713}
+  _audioMixerGroup: {fileID: 3549218508594739080, guid: fc3ff3a0f25e0d642a611026b37dc70c, type: 2}
 --- !u!1 &1711718797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,7 +1586,7 @@ GameObject:
   - component: {fileID: 1837187396}
   - component: {fileID: 1837187395}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: DamageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1605,9 +1639,9 @@ AudioSource:
   m_GameObject: {fileID: 1837187393}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3549218508594739080, guid: fc3ff3a0f25e0d642a611026b37dc70c, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
